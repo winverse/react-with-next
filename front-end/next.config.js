@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 module.exports = {
   webpack(config, options) {
-    console.log('opt', options)
-    return config
+    return config;
   },
   publicRuntimeConfig: {
-    dev: 'dev', 
+    dev: 'dev',
   },
   distDir: '../build',
-  dir: './src'
+  dir: './src',
 };
