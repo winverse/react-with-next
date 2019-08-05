@@ -1,6 +1,7 @@
 module.exports =  {
   parser:  '@typescript-eslint/parser',  // Specifies the ESLint parser
   extends:  [
+    'airbnb',
     'plugin:@typescript-eslint/recommended',  // Uses the recommended rules from the @typescript-eslint/eslint-plugin
   ],
  parserOptions:  {
