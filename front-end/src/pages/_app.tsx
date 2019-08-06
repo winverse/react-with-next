@@ -1,18 +1,23 @@
 import * as React from 'react';
-import { Container } from 'next/app';
+import App, { Container } from 'next/app';
 
-interface AppProps {
+interface RootAppProps {
   Component: React.ElementType;
-  store: any;
+  store: Object;
   pageProps: Object;
 }
 
-const App: React.SFC<AppProps> = ({ Component, store, pageProps }) => {
-  return (
-    <Container>
-      <Component {...pageProps} />
-    </Container>
-  );
-};
+class RootApp extends App<RootAppProps> {
+  render() {
+    const { Component, store, pageProps } = this.props;
+    console.log(Component, pageProps)
+    return (
+      <Container>
+        <Component {...pageProps}/>
+      </Container>
+    )
+  }
+}
 
-export default App;
+
+export default RootApp
