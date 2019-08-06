@@ -1,23 +1,25 @@
 import * as React from 'react';
 import App, { Container } from 'next/app';
+import { GlobalStyles } from '../styles';
 
 interface RootAppProps {
   Component: React.ElementType;
-  store: Object;
-  pageProps: Object;
+  store: Record<string, any>;
+  pageProps: Record<string, any>;
 }
 
 class RootApp extends App<RootAppProps> {
-  render() {
+  public render() {
     const { Component, store, pageProps } = this.props;
-    console.log(Component, pageProps)
+    console.log(store);
     return (
       <Container>
-        <Component {...pageProps}/>
+        <GlobalStyles />
+        <Component {...pageProps} />
       </Container>
-    )
+    );
   }
 }
 
 
-export default RootApp
+export default RootApp;
