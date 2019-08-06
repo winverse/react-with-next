@@ -1,12 +1,12 @@
 import * as React from 'react';
 
+import { BasicTemplate } from '../containers/template';
+
 interface MainPageProps {}
 
 const MainPage: React.SFC<MainPageProps> = () => {
   return (
-    <div>
-      메인페이지 입니다.
-    </div>
+    <BasicTemplate />
   )
 }
 

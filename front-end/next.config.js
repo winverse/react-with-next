@@ -1,7 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 module.exports = {
   webpack(config, options) {
-    return config;
+    if (options.isServer) config.plugins.push(new ForkTsCheckerWebpackPlugin())
+
+    config.resolve.modules.unshift(__dirname)
+
+    return config
   },
   publicRuntimeConfig: {
     dev: 'dev',
