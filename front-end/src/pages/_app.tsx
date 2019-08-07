@@ -1,6 +1,6 @@
 import * as React from 'react';
 import App, { Container } from 'next/app';
-// import 'reset-css';
+import { ResetCss } from '../styles';
 
 interface RootAppProps {
   Component: React.ElementType;
@@ -10,10 +10,10 @@ interface RootAppProps {
 
 class RootApp extends App<RootAppProps> {
   public render() {
-    const { Component, store, pageProps } = this.props;
-    console.log(store);
+    const { Component, pageProps } = this.props;
     return (
       <Container>
+        <ResetCss />
         <Component {...pageProps} />
       </Container>
     );

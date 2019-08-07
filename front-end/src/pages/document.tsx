@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Main, DocumentContext, DocumentInitialProps } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import Document, { Main, NextScript } from 'next/document';
 
-class RootDocument extends React.Component<DocumentInitialProps> {
-  static getInitialProps({ renderPage }: DocumentContext) {
+class RootDocument extends Document {
+  static getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet();
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
     const styles = sheet.getStyleElement();
@@ -22,6 +22,7 @@ class RootDocument extends React.Component<DocumentInitialProps> {
         </head>
         <body>
           <Main />
+          <NextScript />
         </body>
       </html>
     );
