@@ -16,6 +16,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'no-nested-ternary': 0,
     'class-methods-use-this': 0,
-    'object-curly-newline': 0
+    'object-curly-newline': 0,
+    'react/prop-types': 0
   }
 };

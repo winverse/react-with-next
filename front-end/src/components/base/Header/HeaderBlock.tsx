@@ -8,10 +8,26 @@ const HeaderBlock = styled.div`
   border-bottom: 1px solid #e0e0e0;
 `;
 
-interface HeaderProps {}
+const HeaderInner = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 1200px;
+  height: 100%;
+`;
 
-const Header: React.FC<HeaderProps> = () => {
-  return <HeaderBlock>Header</HeaderBlock>;
+interface HeaderProps {
+  children: React.ReactNode;
+}
+
+const Header: React.FC<HeaderProps> = ({ children }) => {
+  return (
+    <HeaderBlock>
+      <HeaderInner>
+        {children}
+      </HeaderInner>
+    </HeaderBlock>
+  );
 };
 
 export default Header;

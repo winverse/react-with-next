@@ -1,6 +1,6 @@
 import * as React from 'react';
 import App, { Container } from 'next/app';
-import { ResetCss } from '../styles';
+import { ResetCss, Typography } from '../styles';
 
 interface RootAppProps {
   Component: React.ElementType;
@@ -14,6 +14,7 @@ class RootApp extends App<RootAppProps> {
     return (
       <Container>
         <ResetCss />
+        <Typography />
         <Component {...pageProps} />
       </Container>
     );
