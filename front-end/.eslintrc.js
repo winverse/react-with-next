@@ -13,5 +13,8 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 0,
     'arrow-body-style': 0,
     'no-console': 0,
+    'react/jsx-one-expression-per-line': 0,
+    'no-nested-ternary': 0,
+    'class-methods-use-this': 0
   }
 };

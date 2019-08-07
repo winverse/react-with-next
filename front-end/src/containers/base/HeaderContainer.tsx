@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { Header } from '../../components/base';
+import { HeaderBlock } from '../../components/base/Header';
 
 interface HeaderContainerProps {}
 
 const HeaderContainer: React.FC<HeaderContainerProps> = () => {
-  return <Header />;
+  return <HeaderBlock />;
 };
 
 export default HeaderContainer;

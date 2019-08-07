@@ -1,6 +1,6 @@
 import * as React from 'react';
 import App, { Container } from 'next/app';
-import { GlobalStyles } from '../styles';
+// import 'reset-css';
 
 interface RootAppProps {
   Component: React.ElementType;
@@ -14,7 +14,6 @@ class RootApp extends App<RootAppProps> {
     console.log(store);
     return (
       <Container>
-        <GlobalStyles />
         <Component {...pageProps} />
       </Container>
     );
