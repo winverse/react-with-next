@@ -11,12 +11,17 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "next": "^9.0.3",
+    "next-redux-wrapper": "^3.0.0-alpha.3",
     "open-color": "^1.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
-    "styled-components": "^4.3.2"
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "styled-components": "^4.3.2",
+    "typesafe-actions": "^4.4.2"
   },
   "devDependencies": {
     "@types/node": "^12.6.9",

@@ -1,7 +1,12 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import App, { Container } from 'next/app';
+import { applyMiddleware, compose, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import withRedux from 'next-redux-wrapper';
+
 import { ResetCss } from '../styles';
+import rootReducer from '../modules';
 
 interface RootAppProps {
   Component: React.ElementType;
@@ -9,6 +14,18 @@ interface RootAppProps {
   pageProps: Record<string, any>;
 }
 
+const configureStore = (initialState, options) => {
+  const middlewares = [];
+  const enhancer =
+    process.env.NODE_ENV === 'production'
+      ? compose(applyMiddleware(...middlewares))
+      : compose(
+          applyMiddleware(...middlewares),
+          !options.isServer ? composeWithDevTools() : f => f,
+        );
+  const store = createStore(rootReducer, initialState, enhancer);
+  return store;
+};
 class RootApp extends App<RootAppProps> {
   static getInitialProps = async ({ ctx, Component }) => {
     let pageProps = {};
@@ -77,4 +94,4 @@ class RootApp extends App<RootAppProps> {
   }
 }
 
-export default RootApp;
+export default withRedux(configureStore)(RootApp);
