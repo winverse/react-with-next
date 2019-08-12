@@ -21,7 +21,7 @@ const ButtonBlock = styled.div<{
     css`
       font-size: 0.875rem;
       font-weight: 600;
-      padding: 8.5px 10px;
+      padding: 8px 10px;
     `}
   ${props =>
     props.inline &&
@@ -30,12 +30,12 @@ const ButtonBlock = styled.div<{
         margin-left: 1rem;
       }
     `}
-    ${props =>
-      buttonColorMap[props.color].border &&
-      css`
-        border: 2px solid ${buttonColorMap[props.color].border};
-        padding: 6.5px 10px;
-      `}
+  ${props =>
+    buttonColorMap[props.color].border &&
+    css`
+      border: 2px solid ${buttonColorMap[props.color].border};
+      padding: 6.5px 10px;
+    `}
   &:hover,
     &:focus {
     background: ${props => buttonColorMap[props.color].hoverBackground};
