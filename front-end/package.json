@@ -9,9 +9,11 @@
     "start": "next start src"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
     "next": "^9.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
     "styled-components": "^4.3.2"
   },

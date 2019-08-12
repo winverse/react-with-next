@@ -21,6 +21,9 @@ const ResetCss = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
   }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
   footer, header, hgroup, main, menu, nav, section {
