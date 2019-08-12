@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { GiFlameSpin } from 'react-icons/gi';
+import oc from 'open-color';
 
 const HeaderLogoBlock = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const HeaderLogoBlock = styled.div`
 
 const Logo = styled(GiFlameSpin)`
   display: inline-block;
-  color: #e90c1f;
+  color: ${oc.red[7]};
   width: 30px;
   height: 30px;
 `;

@@ -24,5 +24,6 @@ module.exports = {
     'react/prop-types': 0,
     'jsx-a11y/html-has-lang': 0,
     'prefer-const': 0,
+    'react/button-has-type': 0,
   },
 };

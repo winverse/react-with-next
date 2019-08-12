@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../../../styles/responsive';
 
 const HeaderBlock = styled.div`
   width: 100%;
@@ -12,7 +13,7 @@ const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
-  width: 1200px;
+  width: ${breakpoints.xlarge};
   height: 100%;
 `;
 

@@ -22,6 +22,7 @@ const ResetCss = createGlobalStyle`
     vertical-align: baseline;
   }
   body {
+    box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
   }
   /* HTML5 display-role reset for older browsers */
