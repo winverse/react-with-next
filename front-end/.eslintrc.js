@@ -1,6 +1,10 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['plugin:@typescript-eslint/recommended', 'airbnb-typescript'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'airbnb-typescript',
+    'prettier',
+  ],
   plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/indent': 0,
@@ -17,6 +21,8 @@ module.exports = {
     'no-nested-ternary': 0,
     'class-methods-use-this': 0,
     'object-curly-newline': 0,
-    'react/prop-types': 0
-  }
+    'react/prop-types': 0,
+    'jsx-a11y/html-has-lang': 0,
+    'prefer-const': 0,
+  },
 };
