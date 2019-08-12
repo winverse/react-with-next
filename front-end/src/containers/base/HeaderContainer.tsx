@@ -1,9 +1,6 @@
 import * as React from 'react';
 
-import {
-  HeaderBlock,
-  HeaderLogo,
-} from '../../components/base/Header';
+import { HeaderBlock, HeaderLogo } from '../../components/base/Header';
 
 interface HeaderContainerProps {}
 

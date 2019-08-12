@@ -8,7 +8,7 @@ interface ErrorPageState {
 
 class Error extends React.Component<ErrorProps, ErrorPageState> {
   static getInitialProps = async ({ res, err }: NextPageContext) => {
-    const statusCode = res ? res.statusCode : (err ? err.statusCode : null);
+    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
     return { statusCode };
   };
 

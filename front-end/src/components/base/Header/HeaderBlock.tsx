@@ -23,9 +23,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
     <HeaderBlock>
-      <HeaderInner>
-        {children}
-      </HeaderInner>
+      <HeaderInner>{children}</HeaderInner>
     </HeaderBlock>
   );
 };

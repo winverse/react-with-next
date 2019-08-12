@@ -11,7 +11,6 @@ interface RootAppProps {
 
 class RootApp extends App<RootAppProps> {
   static getInitialProps = async ({ ctx, Component }) => {
-    console.log('app init');
     let pageProps = {};
     // const state = ctx.store.getState();
     // const cookie = ctx.isServer ? ctx.req.headers.cookie : '';
@@ -22,7 +21,6 @@ class RootApp extends App<RootAppProps> {
   };
 
   public render() {
-    console.log('app render');
     const { Component, pageProps } = this.props;
     return (
       <Container>

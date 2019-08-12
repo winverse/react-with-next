@@ -38,9 +38,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = () => {
       <span className="logo-block">
         <Logo />
       </span>
-      <span className="logo-word">
-        Winverse
-      </span>
+      <span className="logo-word">Winverse</span>
     </HeaderLogoBlock>
   );
 };
