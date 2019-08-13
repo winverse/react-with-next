@@ -1,9 +1,14 @@
 import { combineReducers } from 'redux';
-import core, { CoreState } from './core';
+import { all } from 'redux-saga/effects';
+import core, { CoreState, coreSaga } from './core';
 
 export type RootState = {
   core: CoreState;
 };
+
+export function* rootSaga() {
+  yield all([coreSaga()]);
+}
 
 const rootReducer = combineReducers({
   core,
