@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
+    "immer": "^3.2.0",
     "next": "^9.0.3",
     "next-redux-wrapper": "^3.0.0-alpha.3",
     "open-color": "^1.7.0",
