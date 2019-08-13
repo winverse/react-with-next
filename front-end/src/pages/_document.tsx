@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Helmet, { HelmetData } from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
-import Document, { Main, NextScript } from 'next/document';
+import Document, { Main, Head, NextScript } from 'next/document';
 
 type HelmetProps = {
   helmet: HelmetData;
@@ -29,10 +29,10 @@ class RootDocument extends Document<HelmetProps> {
     const bodyAttrs = bodyAttributes.toComponent();
     return (
       <html {...htmlAttrs}>
-        <head>
+        <Head>
           {this.props.styles}
           {Object.values(helmets).map(el => el.toComponent())}
-        </head>
+        </Head>
         <body {...bodyAttrs}>
           <Main />
           <NextScript />
