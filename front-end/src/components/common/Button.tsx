@@ -7,6 +7,7 @@ const ButtonBlock = styled.div<{
   size: ButtonSize;
   inline: boolean;
 }>`
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   outline: none;
@@ -33,8 +34,7 @@ const ButtonBlock = styled.div<{
   ${props =>
     buttonColorMap[props.color].border &&
     css`
-      border: 2px solid ${buttonColorMap[props.color].border};
-      padding: 6.5px 10px;
+      border: 1.5px solid ${buttonColorMap[props.color].border};
     `}
   &:hover,
     &:focus {

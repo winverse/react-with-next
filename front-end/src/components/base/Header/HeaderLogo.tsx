@@ -21,6 +21,7 @@ const HeaderLogoBlock = styled.div`
     font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: -0.5px;
+    line-height: 1.2;
   }
 `;
 
@@ -39,7 +40,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = () => {
       <span className="logo-block">
         <Logo />
       </span>
-      <span className="logo-word">Winverse</span>
+      <span className="logo-word">Openknowl</span>
     </HeaderLogoBlock>
   );
 };

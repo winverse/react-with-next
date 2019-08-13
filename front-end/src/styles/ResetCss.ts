@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const ResetCss = createGlobalStyle`
-  html, body, div, span, applet, object, iframe,
+  html, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
   del, dfn, em, img, ins, kbd, q, s, samp,
@@ -17,13 +17,14 @@ const ResetCss = createGlobalStyle`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
   }
   body {
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
