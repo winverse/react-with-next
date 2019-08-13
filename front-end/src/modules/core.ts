@@ -18,10 +18,10 @@ const initialState: CoreState = {
 
 const core = createReducer<CoreState>(
   {
-    [SET_DIMMER]: (state, action: SetDimmer) => ({
-      ...state,
-      dimmer: action.payload,
-    }),
+    [SET_DIMMER]: (state, action: SetDimmer) =>
+      produce(state, draft => {
+        draft.dimmer = action.payload;
+      }),
   },
   initialState,
 );
