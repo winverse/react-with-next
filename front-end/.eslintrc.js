@@ -25,5 +25,7 @@ module.exports = {
     'jsx-a11y/html-has-lang': 0,
     'prefer-const': 0,
     'react/button-has-type': 0,
+    'no-param-reassign': 0,
+    'import/prefer-default-export': 0,
   },
 };
