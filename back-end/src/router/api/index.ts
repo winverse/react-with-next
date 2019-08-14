@@ -1,7 +1,7 @@
 import Router from 'koa-router';
-import v2 from './v2';
+import v1 from './v1';
 
 const api = new Router();
-api.use('/v2', v2.routes());
+api.use('/v1', v1.routes());
 
 export default api;

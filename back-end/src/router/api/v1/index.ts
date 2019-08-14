@@ -1,11 +1,11 @@
 import Router from 'koa-router';
 import { Context } from 'koa';
 
-const v2 = new Router();
+const v1 = new Router();
 
-v2.get('/check', (ctx: Context) => {
+v1.get('/check', (ctx: Context) => {
   console.log('실행');
   ctx.body = 'hello';
 });
 
-export default v2;
+export default v1;
