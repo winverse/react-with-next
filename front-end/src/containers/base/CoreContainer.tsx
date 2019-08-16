@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../modules';
+import { useDispatch, useSelector } from 'react-redux';
 import { TEST_HELLO_REQUEST } from '../../modules/core';
+import { RootState } from '../../modules';
 
 interface OwnProps {}
 interface StateProps {}
@@ -12,15 +12,18 @@ type CoreProps = OwnProps & StateProps & DispatchProps;
 const { useEffect } = React;
 
 const CoreContainer: React.FC<CoreProps> = () => {
-  // const dimmer = useSelector((state: RootState) => state.core.dimmer);
+  const comment = useSelector((state: RootState) => state.core.hello);
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('mount');
     dispatch({
       type: TEST_HELLO_REQUEST,
     });
   }, []);
-  return <></>;
+  return (
+    <>
+      <div>{comment}</div>
+    </>
+  );
 };
 
 export default CoreContainer;
