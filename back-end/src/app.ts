@@ -1,8 +1,10 @@
 import Koa from 'koa';
+import cors from '@koa/cors';
 import router from './router';
 
 export default class App {
   public app: Koa;
+
   constructor() {
     this.app = new Koa();
     this.meddleware();
@@ -10,6 +12,12 @@ export default class App {
 
   public meddleware = (): void => {
     const { app } = this;
+    app.use(
+      cors({
+        origin: 'http://localhost:3000',
+        credentials: true,
+      }),
+    );
     app.use(router.routes()).use(router.allowedMethods());
   };
 
