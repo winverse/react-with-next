@@ -1,5 +1,6 @@
-import dotenv = require('dotenv');
 import App from './app';
+
+import dotenv = require('dotenv');
 
 dotenv.config();
 
