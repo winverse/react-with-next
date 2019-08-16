@@ -4,10 +4,12 @@ import App, { Container } from 'next/app';
 import { applyMiddleware, compose, createStore, Store } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import withRedux from 'next-redux-wrapper';
+import createSagaMiddleware from 'redux-saga';
+import withReduxSaga from 'next-redux-saga';
 import { Provider } from 'react-redux';
 
 import { ResetCss } from '../styles';
-import rootReducer from '../modules';
+import rootReducer, { rootSaga } from '../modules';
 import { CoreContainer } from '../containers/base';
 
 interface RootAppProps {
@@ -17,7 +19,8 @@ interface RootAppProps {
 }
 
 const configureStore = (initialState, options) => {
-  const middlewares = [];
+  const sagaMiddleware = createSagaMiddleware();
+  const middlewares = [sagaMiddleware];
   const enhancer =
     process.env.NODE_ENV === 'production'
       ? compose(applyMiddleware(...middlewares))
@@ -26,6 +29,7 @@ const configureStore = (initialState, options) => {
           !options.isServer ? composeWithDevTools() : f => f,
         );
   const store = createStore(rootReducer, initialState, enhancer);
+  (store as any).sagaTask = sagaMiddleware.run(rootSaga);
   return store;
 };
 class RootApp extends App<RootAppProps> {
@@ -99,4 +103,4 @@ class RootApp extends App<RootAppProps> {
   }
 }
 
-export default withRedux(configureStore)(RootApp);
+export default withRedux(configureStore)(withReduxSaga(RootApp));
