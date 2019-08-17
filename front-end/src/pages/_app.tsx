@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import { ResetCss } from '../styles';
 import rootReducer, { rootSaga } from '../modules';
 import { CoreContainer } from '../containers/base';
+import AuthContainer from '../containers/auth/AuthContainer';
 
 interface RootAppProps {
   Component: React.ElementType;
@@ -96,6 +97,7 @@ class RootApp extends App<RootAppProps> {
           />
           <ResetCss />
           <CoreContainer />
+          <AuthContainer />
           <Component {...pageProps} />
         </Provider>
       </Container>

@@ -66,11 +66,7 @@ const HazyLayer: React.FC<HazyLayerProps> = ({ visible }) => {
   }, []);
 
   if (!animate && !visible && closed) return null;
-  return (
-    <HazyLayerBlock visible={visible} animate={animate}>
-      HazyLayer
-    </HazyLayerBlock>
-  );
+  return <HazyLayerBlock visible={visible} animate={animate} />;
 };
 
 export default HazyLayer;

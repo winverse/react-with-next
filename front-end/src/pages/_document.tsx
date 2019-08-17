@@ -30,7 +30,7 @@ class RootDocument extends Document<HelmetProps> {
     return (
       <html {...htmlAttrs}>
         <Head>
-          {this.props.styles}
+          {/* {this.props.styles} */}
           {Object.values(helmets).map(el => el.toComponent())}
         </Head>
         <body {...bodyAttrs}>

@@ -12,7 +12,7 @@ export type APIError = {
   };
 };
 
-export const SET_HAZY = 'core/SET_HAZY';
+const SET_HAZY = 'core/SET_HAZY';
 
 // for API
 export const TEST_HELLO = {
@@ -22,6 +22,7 @@ export const TEST_HELLO = {
 };
 
 export const setHazy = createStandardAction(SET_HAZY)<boolean>();
+
 export const testHello = createAsyncAction(
   TEST_HELLO.REQUEST,
   TEST_HELLO.SUCCESS,
@@ -29,6 +30,7 @@ export const testHello = createAsyncAction(
 )<{}, string, APIError>();
 
 type SetHazy = ReturnType<typeof setHazy>;
+
 type TestHelloRequest = ReturnType<typeof testHello.request>;
 
 export type CoreState = {
@@ -40,6 +42,20 @@ const initialState: CoreState = {
   hazy: false,
   hello: '',
 };
+
+const core = createReducer<CoreState>(
+  {
+    [SET_HAZY]: (state, action: SetHazy) =>
+      produce(state, draft => {
+        draft.hazy = action.payload;
+      }),
+    [TEST_HELLO.SUCCESS]: (state, action) =>
+      produce(state, draft => {
+        draft.hello = action.payload;
+      }),
+  },
+  initialState,
+);
 
 function* getTestHello(action: TestHelloRequest) {
   try {
@@ -57,20 +73,5 @@ function* wathchGetTestHello() {
 export function* coreSaga() {
   yield all([fork(wathchGetTestHello)]);
 }
-
-const core = createReducer<CoreState>(
-  {
-    [SET_HAZY]: (state, action: SetHazy) =>
-      produce(state, draft => {
-        console.log(action.payload);
-        draft.hazy = action.payload;
-      }),
-    [TEST_HELLO.SUCCESS]: (state, action) =>
-      produce(state, draft => {
-        draft.hello = action.payload;
-      }),
-  },
-  initialState,
-);
 
 export default core;

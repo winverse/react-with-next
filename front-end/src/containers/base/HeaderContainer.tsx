@@ -6,19 +6,20 @@ import {
   HeaderLogo,
   HeaderRight,
 } from '../../components/base/Header';
-import { SET_HAZY } from '../../modules/core';
+import { setHazy } from '../../modules/core';
+import { setAuthMode, setAuthVisibility } from '../../modules/auth';
+
+const { useCallback } = React;
 
 interface HeaderContainerProps {}
 
 const HeaderContainer: React.FC<HeaderContainerProps> = () => {
   const dispatch = useDispatch();
-  const onClickLogin = () => {
-    console.log('hello');
-    dispatch({
-      type: SET_HAZY,
-      payload: true,
-    });
-  };
+  const onClickLogin = useCallback(() => {
+    dispatch(setHazy(true));
+    dispatch(setAuthMode('LOGIN'));
+    dispatch(setAuthVisibility(true));
+  }, []);
   return (
     <HeaderBlock>
       <HeaderLogo />
