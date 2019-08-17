@@ -10,12 +10,14 @@ const HeaderRightBlock = styled.div`
   }
 `;
 
-interface HeaderRightProps {}
+interface HeaderRightProps {
+  onClickLogin: () => void;
+}
 
-const HeaderRight: React.FC<HeaderRightProps> = () => {
+const HeaderRight: React.FC<HeaderRightProps> = ({ onClickLogin }) => {
   return (
     <HeaderRightBlock>
-      <Button color="red" inline>
+      <Button color="red" inline onClick={onClickLogin}>
         로그인
       </Button>
       <Button color="white" inline>

@@ -5,6 +5,9 @@ module.exports = {
     'airbnb-typescript',
     'prettier',
   ],
+  env: {
+    browser: true,
+  },
   plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/indent': 0,

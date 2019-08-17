@@ -1,6 +1,6 @@
 import { createStandardAction, createAsyncAction } from 'typesafe-actions';
-import produce from 'immer';
 import { call, put, all, fork, takeLatest } from 'redux-saga/effects';
+import produce from 'immer';
 import { createReducer } from '../lib/utils';
 import * as coreAPI from '../lib/api/core';
 
@@ -12,7 +12,7 @@ export type APIError = {
   };
 };
 
-const SET_DIMMER = 'core/SET_DIMMER';
+export const SET_HAZY = 'core/SET_HAZY';
 
 // for API
 export const TEST_HELLO = {
@@ -21,23 +21,23 @@ export const TEST_HELLO = {
   FAILURE: 'core/TEST_HELLO_FAILURE',
 };
 
-export const setDimmer = createStandardAction(SET_DIMMER)<boolean>();
+export const setHazy = createStandardAction(SET_HAZY)<boolean>();
 export const testHello = createAsyncAction(
   TEST_HELLO.REQUEST,
   TEST_HELLO.SUCCESS,
   TEST_HELLO.FAILURE,
 )<{}, string, APIError>();
 
-type SetDimmer = ReturnType<typeof setDimmer>;
+type SetHazy = ReturnType<typeof setHazy>;
 type TestHelloRequest = ReturnType<typeof testHello.request>;
 
 export type CoreState = {
-  dimmer: boolean;
+  hazy: boolean;
   hello: string;
 };
 
 const initialState: CoreState = {
-  dimmer: false,
+  hazy: false,
   hello: '',
 };
 
@@ -60,9 +60,10 @@ export function* coreSaga() {
 
 const core = createReducer<CoreState>(
   {
-    [SET_DIMMER]: (state, action: SetDimmer) =>
+    [SET_HAZY]: (state, action: SetHazy) =>
       produce(state, draft => {
-        draft.dimmer = action.payload;
+        console.log(action.payload);
+        draft.hazy = action.payload;
       }),
     [TEST_HELLO.SUCCESS]: (state, action) =>
       produce(state, draft => {
