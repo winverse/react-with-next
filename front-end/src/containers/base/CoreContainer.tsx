@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { TEST_HELLO_REQUEST } from '../../modules/core';
+import { TEST_HELLO } from '../../modules/core';
 import { RootState } from '../../modules';
 
 interface OwnProps {}
@@ -16,7 +16,7 @@ const CoreContainer: React.FC<CoreProps> = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
-      type: TEST_HELLO_REQUEST,
+      type: TEST_HELLO.REQUEST,
     });
   }, []);
   return (

@@ -13,16 +13,20 @@ export type APIError = {
 };
 
 const SET_DIMMER = 'core/SET_DIMMER';
-export const TEST_HELLO_REQUEST = 'core/TEST_HELLO_REQUEST';
-const TEST_HELLO_SUCCESS = 'core/TEST_HELLO_SUCCESS';
-const TEST_HELLO_FAILURE = 'core/TEST_HELLO_FAILURE';
+
+// for API
+export const TEST_HELLO = {
+  REQUEST: 'core/TEST_HELLO_REQUEST',
+  SUCCESS: 'core/TEST_HELLO_SUCCESS',
+  FAILURE: 'core/TEST_HELLO_FAILURE',
+};
 
 export const setDimmer = createStandardAction(SET_DIMMER)<boolean>();
 export const testHello = createAsyncAction(
-  TEST_HELLO_REQUEST,
-  TEST_HELLO_SUCCESS,
-  TEST_HELLO_FAILURE,
-)<any, string, APIError>();
+  TEST_HELLO.REQUEST,
+  TEST_HELLO.SUCCESS,
+  TEST_HELLO.FAILURE,
+)<{}, string, APIError>();
 
 type SetDimmer = ReturnType<typeof setDimmer>;
 type TestHelloRequest = ReturnType<typeof testHello.request>;
@@ -37,7 +41,7 @@ const initialState: CoreState = {
   hello: '',
 };
 
-function* getTestHello(action: TestHelloRequest): Generator {
+function* getTestHello(action: TestHelloRequest) {
   try {
     const res = yield call(coreAPI.getHello);
     yield put(testHello.success(res.data));
@@ -47,7 +51,7 @@ function* getTestHello(action: TestHelloRequest): Generator {
 }
 
 function* wathchGetTestHello() {
-  yield takeLatest(TEST_HELLO_REQUEST, getTestHello);
+  yield takeLatest(TEST_HELLO.REQUEST, getTestHello);
 }
 
 export function* coreSaga() {
@@ -60,7 +64,7 @@ const core = createReducer<CoreState>(
       produce(state, draft => {
         draft.dimmer = action.payload;
       }),
-    [TEST_HELLO_SUCCESS]: (state, action) =>
+    [TEST_HELLO.SUCCESS]: (state, action) =>
       produce(state, draft => {
         draft.hello = action.payload;
       }),
