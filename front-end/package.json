@@ -12,7 +12,7 @@
     "axios": "^0.19.0",
     "babel-plugin-styled-components": "^1.10.6",
     "immer": "^3.2.0",
-    "next": "^9.0.3",
+    "next": "^9.3.2",
     "next-redux-saga": "^4.0.2",
     "next-redux-wrapper": "^3.0.0-alpha.3",
     "open-color": "^1.7.0",
