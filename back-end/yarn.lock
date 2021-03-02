@@ -122,13 +122,6 @@
   dependencies:
     "@types/koa" "*"
 
-"@types/koa2-cors@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@types/koa2-cors/-/koa2-cors-2.0.1.tgz#76a635cadc9c10e9d29a209fa2db28529dfc765a"
-  integrity sha512-8DaO8CkGJGAVWPeODHeGW6T9grKunnfAg0LAyayMrqP/ggPTiHxwrvrk7UJ+NNZ7aQo4Cn0fHSMKhucj+PcquA==
-  dependencies:
-    "@types/koa" "*"
-
 "@types/koa@*", "@types/koa@^2.0.49":
   version "2.0.49"
   resolved "https://registry.yarnpkg.com/@types/koa/-/koa-2.0.49.tgz#8ffc2ddbdd715a2c392a218c67e116cb07007234"
@@ -2110,9 +2103,9 @@ uri-js@^4.2.2:
     punycode "^2.1.0"
 
 urijs@^1.19.0:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.1.tgz#5b0ff530c0cbde8386f6342235ba5ca6e995d25a"
-  integrity sha512-xVrGVi94ueCJNrBSTjWqjvtgvl3cyOTThp2zaMaFNGp3F542TR6sM3f2o8RqZl+AwteClSVmoCyt0ka4RjQOQg==
+  version "1.19.6"
+  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.6.tgz#51f8cb17ca16faefb20b9a31ac60f84aa2b7c870"
+  integrity sha512-eSXsXZ2jLvGWeLYlQA3Gh36BcjF+0amo92+wHPyN1mdR8Nxf75fuEuYTd9c0a+m/vhCjRK0ESlE9YNLW+E1VEw==
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"
